@@ -1,5 +1,6 @@
 export interface LookupEntity {
   id: number;
-  entityName: string;
-  lookups?: any[];
+  locupName: string;
+  newSystem: string[];
+  mappingStrategy: string;
 }

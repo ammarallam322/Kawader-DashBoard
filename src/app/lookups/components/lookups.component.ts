@@ -3,12 +3,12 @@ import {LookupEntity} from '../interfaces/lookups-entity'
 import {LookupService} from '../services/lookup.service'
  import { CommonModule } from '@angular/common';
 
-
+import {HeaderComponent} from '../../header/header.component'
 
 
 @Component({
   selector: 'app-lookups',
-  imports: [CommonModule],
+  imports: [CommonModule,HeaderComponent],
   templateUrl: './lookups.component.html',
   styleUrl: './lookups.component.css'
 })

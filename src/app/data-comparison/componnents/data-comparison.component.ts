@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataEntity } from '../interfaces/data-entity';
 import { DataComparisonService } from '../services/data-comparison.service';
+import {HeaderComponent} from '../../header/header.component'
 
 @Component({
   selector: 'app-data-comparison',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,HeaderComponent],
   templateUrl: './data-comparison.component.html',
   styleUrls: ['./data-comparison.component.css']
 })

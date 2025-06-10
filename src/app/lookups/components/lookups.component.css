@@ -1,34 +1,4 @@
 
-
-
-
-/* Navbar Container */
-.navbar {
-  background-color: #fff; 
-  padding: 10px 20px; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-}
-/* List of Navigation Items */
-.nav-list {
-  list-style: none; 
-  margin: 0;
-  padding: 0;
-  display: flex; 
-  justify-content: flex-start; 
-  align-items: center; 
-}
-
-
-/* Navigation Link */
-.nav-link {
-  color: #8A1538;
-  text-decoration: none; 
-  font-size: 3rem;
-  padding: 8px 15px;
-  border-radius: 5px; 
-}
-
-
 /* Container styles */
 .container {
   max-width: 1200px;

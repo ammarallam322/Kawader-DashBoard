@@ -9,23 +9,49 @@ export class LookupService {
   private entities: LookupEntity[] = [
     {
       id: 1,
-      entityName: 'Employer HR Member',
-      lookups: [
-        { id: 1, name: 'Employer' },
-        { id: 2, name: 'Business Required' },
-           { id: 3, name: 'Department' },
-      ]
+      locupName: 'Nationality',
+    newSystem:['GUID' , 'column (EN)' , 'column (AR)'],
+     mappingStrategy:' ERP (text & code) >>> mapping through text '
     },
 
      {
       id: 2,
-      entityName: 'Employer HR Member2',
-      lookups: [
-        { id: 1, name: 'Employer2' },
-        { id: 2, name: 'Business Required2' },
-           { id: 3, name: 'Department2' },
-      ]
-    }
+      locupName: 'Profile',
+      newSystem:[' choice (public,private ,both)'],
+     mappingStrategy:'manually depends on condition on drived column',
+    },
+     {
+      id: 3,
+      locupName: 'Language',
+    newSystem:['GUID' , 'column (EN)' , 'column (AR)'],
+     mappingStrategy:' ERP (text & code) >>> mapping through text',
+    },
+
+     {
+      id: 4,
+      locupName: 'Gender',
+      newSystem:[' 0 , 1'],
+     mappingStrategy:'ERP (0,1) >>> 0,1',
+    },
+     {
+      id: 5,
+      locupName: 'Education Level',
+      newSystem:[' education level'],
+     mappingStrategy:'manually using derived coumn depends on EDUCATION LEVEL from ERP',
+     }
+    
+    //   id: 6,
+    //   locupName: 'Location',
+    //   newSystem:[' 0 , 1'],
+    //  mappingStrategy:'ERP (0,1) >>> 0,1',
+    // },
+     // },
+    //  {
+    //   id: 7,
+    //   locupName: 'Specialization',
+    //   newSystem:['education level'],
+    //  mappingStrategy:'ERP (0,1) >>> 0,1',
+    // }
   ];
   constructor() { }
 
