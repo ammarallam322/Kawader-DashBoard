@@ -1,0 +1,37 @@
+
+
+<nav class="navbar">
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a href="#" class="nav-link">Kawader</a>
+    </li>
+  </ul>
+</nav>
+
+
+
+<div class="container">
+  <h2>Entities and Lookups</h2>
+  <div class="table-responsive">
+    <table class="lookup-table">
+      <thead>
+        <tr>
+          <th>Entity Name</th>
+          <th>Lookups</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entity of entities">
+          <td>{{ entity.entityName }}</td>
+          <td>
+            <ul class="lookup-list">
+              <li *ngFor="let lookup of entity.lookups">
+                {{ lookup.id }} - {{ lookup.name }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
