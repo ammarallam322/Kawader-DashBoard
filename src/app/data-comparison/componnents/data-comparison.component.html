@@ -1,0 +1,99 @@
+
+<nav class="navbar">
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a href="#" class="nav-link">Kawader</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="dashboard-container">
+  
+  <div class="dashboard-header">
+    <h1 class="dashboard-title">ERP-CRM Comparison Dashboard</h1>
+ 
+  </div>
+
+  <div *ngIf="loading" class="loading-container">
+    <div class="loading-spinner"></div>
+    <p>Loading data comparison...</p>
+  </div>
+
+  <div *ngIf="!loading" class="table-container">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th class="entity-col">Entity Name</th>
+        <th class="count-col">ERP Records</th>
+        <th class="count-col">CRM Records</th>
+        <th class="status-col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let entity of entities">
+        <tr class="parent-row" [class.has-children]="hasChildren(entity)">
+          <td class="entity-name">
+            <div class="entity-content">
+              <button
+                *ngIf="hasChildren(entity)"
+                class="expand-btn"
+                (click)="toggleExpand(entity)"
+                [class.expanded]="entity.isExpanded">
+                {{ entity.isExpanded ? '▼' : '▶' }}
+              </button>
+              <span class="entity-text">{{ entity.entityName }}</span>
+            </div>
+          </td>
+          <td class="count-cell">
+            <span class="count-number">{{ entity.erpRecordCount | number }}</span>
+          </td>
+          <td class="count-cell">
+            <span class="count-number">{{ entity.crmRecordCount | number }}</span>
+          </td>
+          <td class="status-cell">
+            <span
+              class="status-badge"
+              [style.background-color]="entity.status ? 'rgb(18 164 18)' : 'rgb(164 18 18)'" >
+              <span class="status-icon">{{ entity.status ? '&#10003;' : '&#10006;' }}</span>
+              {{ entity.status ? 'Matched' : 'Mismatched' }}
+            </span>
+          </td>
+        </tr>
+
+        <ng-container *ngIf="entity.isExpanded && entity.children">
+          <tr *ngFor="let child of entity.children" class="child-row">
+            <td class="entity-name">
+              <div class="entity-content child-content">
+                <span class="child-indicator">└─</span>
+                <span class="entity-text">{{ child.entityName }}</span>
+              </div>
+            </td>
+            <td class="count-cell">
+              <span class="count-number">{{ child.erpRecordCount | number }}</span>
+            </td>
+            <td class="count-cell">
+              <span class="count-number">{{ child.crmRecordCount | number }}</span>
+            </td>
+                    <td class="status-cell">
+  <span
+    class="status-badge"
+    [ngStyle]="{ 'background-color': child.status ? 'rgb(18 164 18)' : 'rgb(164 18 18)'}"
+  >
+    <span class="status-icon">{{ child.status ? '&#10003;' : '&#10006;' }}</span>
+    {{ child.status ? 'Matched' : 'Mismatched' }}
+  </span>
+</td>
+       
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+
+  <div *ngIf="!loading && entities.length === 0" class="empty-state">
+    <p>No data entities found to compare.</p>
+    <button class="refresh-btn" (click)="refreshData()">Reload Data</button>
+  </div>
+</div>
+
