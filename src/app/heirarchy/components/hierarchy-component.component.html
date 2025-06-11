@@ -1,0 +1,95 @@
+<!-- hierarchy-component.component.html -->
+<!-- <app-header></app-header> -->
+<div class="hierarchy-container">
+  
+  
+<h1 class="heirarchy-title">Heirarchy Structure</h1>
+  
+  <!-- Lookups Table -->
+  <div class="table-container">
+    <h2 (click)="toggleLookups()" class="collapsible-header">
+     01- Lookups
+      <span class="arrow" [class.expanded]="isLookupsExpanded"></span>
+    </h2>
+    <table class="entity-table" *ngIf="isLookupsExpanded">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lookup of lookups">
+          <td>{{ lookup.id }}</td>
+          <td>{{ lookup.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Main Entities Table -->
+  <div class="table-container">
+    <h2 (click)="toggleMainEntities()" class="collapsible-header">
+     02- Main Entities
+      <span class="arrow" [class.expanded]="isMainEntitiesExpanded"></span>
+    </h2>
+    <table class="entity-table" *ngIf="isMainEntitiesExpanded">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entity of mainEntities">
+          <td>{{ entity.id }}</td>
+          <td>{{ entity.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Child Entities Table -->
+  <div class="table-container">
+    <h2 (click)="toggleChildEntities()" class="collapsible-header">
+     03- Child Entities
+      <span class="arrow" [class.expanded]="isChildEntitiesExpanded"></span>
+    </h2>
+    <table class="entity-table" *ngIf="isChildEntitiesExpanded">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let child of childEntities">
+          <td>{{ child.id }}</td>
+          <td>{{ child.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Sub-Child Entities Table -->
+  <div class="table-container">
+    <h2 (click)="toggleSubChildEntities()" class="collapsible-header">
+     04- Sub-Child Entities
+      <span class="arrow" [class.expanded]="isSubChildEntitiesExpanded"></span>
+    </h2>
+    <table class="entity-table" *ngIf="isSubChildEntitiesExpanded">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subChild of subChildEntities">
+          <td>{{ subChild.id }}</td>
+          <td>{{ subChild.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

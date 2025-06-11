@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { DataEntity } from '../interfaces/data-entity';
 import { DataComparisonService } from '../services/data-comparison.service';
 import {HeaderComponent} from '../../header/header.component'
-
+import {HierarchyComponent} from '../../heirarchy/components/hierarchy-component.component'
 @Component({
   selector: 'app-data-comparison',
   standalone: true,
-  imports: [CommonModule,HeaderComponent],
+  imports: [CommonModule,HeaderComponent,HierarchyComponent],
   templateUrl: './data-comparison.component.html',
   styleUrls: ['./data-comparison.component.css']
 })

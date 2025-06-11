@@ -1,0 +1,86 @@
+/* hierarchy-component.component.css */
+.hierarchy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.heirarchy-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.table-container {
+  margin: 20px 0;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.collapsible-header {
+  color: #333;
+  margin-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.collapsible-header:hover {
+  background: #d0d0d0;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.arrow.expanded {
+  transform: rotate(180deg);
+}
+
+.entity-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: opacity 0.3s ease;
+      color: black;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background: #4CAF50;
+  color: white;
+}
+
+tr:hover {
+  background: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+  .hierarchy-container {
+    padding: 10px;
+  }
+
+  .table-container {
+    padding: 10px;
+  }
+}
