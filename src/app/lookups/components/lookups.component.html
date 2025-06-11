@@ -1,0 +1,30 @@
+
+
+<app-header/>
+
+
+<div class="container">
+  <h2>Lookups</h2>
+  <div class="table-responsive">
+    <table class="lookup-table">
+      <thead>
+        <tr>
+          <th>Lookup </th>
+          <th>New System Structure</th>
+          <th>Mapping Strategy</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entity of entities">
+          <td>{{ entity.locupName }}</td>
+         <td>
+            <ul class="lookup-list">
+              <li *ngFor="let system of entity.newSystem">{{ system }}</li>
+            </ul>
+          </td>
+          <td>{{entity.mappingStrategy}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

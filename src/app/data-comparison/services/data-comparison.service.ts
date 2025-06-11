@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { DataEntity } from '../interfaces/data-entity';
-
+//import {HttpClient} from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
 export class DataComparisonService {
+  private apiUrl = '';
 
+  constructor(/*private http: HttpClient*/) { }
   // Static data 
   private staticData: DataEntity[] = [
     {
@@ -108,12 +110,14 @@ export class DataComparisonService {
     }
   ];
 
-  constructor() { }
 
-  // Get all entities
-  getEntities(): Observable<DataEntity[]> {
-    return of(this.staticData);
+  // // Get all entities
+  // getEntities(): Observable<DataEntity[]> {
+  //   return  this.http.get<DataEntity[]>(`${this.apiUrl}/all`) ;
+  // }
+
+ getEntities(): Observable<DataEntity[]> {
+    return of(this.staticData)
   }
 
- 
 }

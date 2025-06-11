@@ -1,0 +1,92 @@
+
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Heading styles */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Table styles */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lookup-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lookup-table th,
+.lookup-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.lookup-table th {
+  background-color: #c6d5e4;
+  color: #374151;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.lookup-table td {
+  color: #34495e;
+  font-size: 1.5rem;
+}
+
+.lookup-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.lookup-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Lookup list styles */
+.lookup-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lookup-list li {
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  border-left: 3px solid #3498db;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .lookup-table th,
+  .lookup-table td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
