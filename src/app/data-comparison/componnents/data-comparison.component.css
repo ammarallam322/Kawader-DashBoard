@@ -184,8 +184,15 @@ td {
 
 
 /*parent*/
+
+.parent-row{
+  margin-bottom: 300px;
+}
 .comparison-table tbody tr.parent-row {
   background-color: #f3e9e9; 
+  margin-bottom: 10px; 
+  display: table-row;
+  border-bottom: 10px solid transparent;
 }
 
 
@@ -303,6 +310,6 @@ td {
   th,
   td {
     padding: 0.75rem;
-    font-size: 0.9rem; /* Adjusted for mobile readability */
+    font-size: 0.9rem; 
   }
 }

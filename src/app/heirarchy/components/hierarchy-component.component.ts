@@ -1,51 +1,51 @@
+// hierarchy-component.component.ts
 import { Component, OnInit } from '@angular/core';
-import {Lookup , MainEntity,ChildDetail , SubChildEntity} from '../interfaces/heirarchy-entities'
-import {HierarchyService} from '../servuces/heirarch.services'
 import { CommonModule } from '@angular/common';
-import {HeaderComponent} from '../../header/header.component'
-
+import { Lookup, MainEntity, ChildDetail, SubChildEntity } from '../interfaces/heirarchy-entities';
+import { HierarchyService } from '../servuces/heirarch.services';
+import { HeaderComponent } from '../../header/header.component';
 
 @Component({
   selector: 'app-hierarchy',
-    imports: [CommonModule,HeaderComponent],
-  
+  standalone: true,
+  imports: [CommonModule, HeaderComponent],
   templateUrl: './hierarchy-component.component.html',
   styleUrls: ['./hierarchy-component.component.css']
 })
-
 export class HierarchyComponent implements OnInit {
-  hierarchy: Lookup[] = [];
-  expandedLookups: Set<string> = new Set();
-  expandedMainEntities: Set<string> = new Set();
-  expandedChildDetails: Set<string> = new Set();
+  lookups: Lookup[] = [];
+  mainEntities: MainEntity[] = [];
+  childEntities: ChildDetail[] = [];
+  subChildEntities: SubChildEntity[] = [];
+
+  isLookupsExpanded: boolean = false;
+  isMainEntitiesExpanded: boolean = false;
+  isChildEntitiesExpanded: boolean = false;
+  isSubChildEntitiesExpanded: boolean = false;
 
   constructor(private hierarchyService: HierarchyService) {}
 
   ngOnInit(): void {
-    this.hierarchy = this.hierarchyService.getHierarchy();
+    this.lookups = this.hierarchyService.getLookups();
+    this.mainEntities = this.hierarchyService.getMainEntities();
+    this.childEntities = this.hierarchyService.getChilds();
+    this.subChildEntities = this.hierarchyService.getSubChilds();
   }
 
-  toggleLookup(lookupName: string): void {
-    if (this.expandedLookups.has(lookupName)) {
-      this.expandedLookups.delete(lookupName);
-    } else {
-      this.expandedLookups.add(lookupName);
-    }
+  toggleLookups(): void {
+    this.isLookupsExpanded = !this.isLookupsExpanded;
   }
 
-  toggleMainEntity(mainEntityName: string): void {
-    if (this.expandedMainEntities.has(mainEntityName)) {
-      this.expandedMainEntities.delete(mainEntityName);
-    } else {
-      this.expandedMainEntities.add(mainEntityName);
-    }
+  toggleMainEntities(): void {
+    this.isMainEntitiesExpanded = !this.isMainEntitiesExpanded;
   }
 
-  toggleChildDetail(childDetailName: string): void {
-    if (this.expandedChildDetails.has(childDetailName)) {
-      this.expandedChildDetails.delete(childDetailName);
-    } else {
-      this.expandedChildDetails.add(childDetailName);
-    }
+  toggleChildEntities(): void {
+    this.isChildEntitiesExpanded = !this.isChildEntitiesExpanded;
   }
+
+  toggleSubChildEntities(): void {
+    this.isSubChildEntitiesExpanded = !this.isSubChildEntitiesExpanded;
+  }
+
 }

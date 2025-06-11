@@ -1,18 +1,19 @@
 export interface Lookup {
+  id: string;
   name: string;
-  mainEntities: MainEntity[];
 }
 
 export interface MainEntity {
+  id: string;
   name: string;
-  childDetails: ChildDetail[];
 }
 
 export interface ChildDetail {
+   id: string;
   name: string;
-  subChildEntities: SubChildEntity[];
 }
 
 export interface SubChildEntity {
+ id: string;
   name: string;
 }

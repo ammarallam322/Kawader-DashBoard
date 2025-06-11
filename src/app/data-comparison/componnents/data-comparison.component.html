@@ -52,6 +52,7 @@
             </span>
           </td>
         </tr>
+        
 
         <ng-container *ngIf="entity.isExpanded && entity.children">
           <tr *ngFor="let child of entity.children" class="child-row">
@@ -90,3 +91,4 @@
   </div>
 </div>
 
+<app-hierarchy/>
