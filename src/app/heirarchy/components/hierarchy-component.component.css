@@ -1,0 +1,138 @@
+/* Container styles */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Heading styles */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Table responsive wrapper */
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lookup-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lookup-table th,
+.lookup-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.lookup-table th {
+  background-color: #c6d5e4;
+  color: #374151;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+/* Level 1: Lookups (Parent td) */
+.lookup-table td {
+  background-color: #3498db; 
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.lookup-table td.even-row {
+  background-color: #85c1e9; /* أزرق فاتح */
+  color: #fff;
+}
+
+/* Nested table styles for different levels */
+.nested-table.level-1 {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.nested-table.level-1 .even-row {
+  background-color: #82e0aa; 
+  color: #fff;
+}
+
+.nested-table.level-2 {
+  background-color: #f1c40f; 
+  color: #333;
+}
+
+.nested-table.level-2 .even-row {
+  background-color: #f9e79f; 
+  color: #333;
+}
+
+.nested-table.level-3 {
+  background-color: #df8c44; 
+  color: #fff;
+}
+
+.nested-table.level-3 .even-row {
+  background-color: #da7b2a; 
+  color: #fff;
+}
+
+.nested-table {
+  margin-left: 20px;
+  width: 95%;
+  border-radius: 6px;
+}
+
+/* Toggle button styles */
+button {
+  background: #34495e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2c3e50;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .lookup-table th,
+  .lookup-table td {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .nested-table {
+    margin-left: 10px;
+    width: 90%;
+  }
+}
